@@ -1,0 +1,257 @@
+@font-face {
+    font-family: "Lombardic";
+    src: url("fonts/Lombardic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Glacial";
+    src: url("fonts/GlacialIndifference.otf") format("opentype");
+}
+
+
+
+#lineCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none; 
+    z-index: 5; 
+}
+
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #10161F;
+    width: 100%;
+}
+
+.background {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.titleLayout {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+
+
+
+.gear-wrapper {
+    position: relative;
+    height: 17.9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lines {
+    display: none;
+    pointer-events: none;
+    width: 100vw;
+    height: auto;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+}
+
+.lines.show {
+    display: block;
+    pointer-events: all;
+}
+
+.gear {
+    position: absolute;
+    width: 47vw;
+    height: auto;
+    object-fit: contain; 
+    clip-path: polygon(
+        /* --- 1. TOP TOOTH --- */
+        46% 0%, 54% 0%,         /* Top Tooth: Left corner -> Right corner */
+        54% 10%, 57% 15%,       /* Upper-Right Inner Valley Drops */
+
+        /* --- 2. TOP-RIGHT TOOTH --- */
+        61% 8%, 66% 21%,        /* Top-Right Tooth: Top corner -> Bottom corner */
+        63.5% 31%, 65% 39%,       /* Far-Right Upper Inner Valley Drops */
+
+        /* --- 3. RIGHT TOOTH --- */
+        69% 40%, 69% 60%,     /* Right Tooth: Top corner -> Bottom corner */
+        66% 61%, 63.5% 70%,       /* Far-Right Lower Inner Valley Drops */
+
+        /* --- 4. BOTTOM-RIGHT TOOTH --- */
+        66% 78%, 61% 92%,       /* Bottom-Right Tooth: Top corner -> Bottom corner */
+        57% 86%, 55% 88%,       /* Lower-Right Inner Valley Drops */
+
+        /* --- 5. BOTTOM TOOTH --- */
+        54% 100%, 46% 100%,     /* Bottom Tooth: Right corner -> Left corner */
+        46% 89%, 43% 86%,       /* Lower-Left Inner Valley Rises */
+
+        /* --- 6. BOTTOM-LEFT TOOTH --- */
+        39% 93%, 34% 78%,        /* Bottom-Left Tooth: Right corner -> Left corner */
+        36.5% 69%, 35% 62%,       /* Far-Left Lower Inner Valley Rises */
+
+        /* --- 7. LEFT TOOTH --- */
+        31% 60%, 31% 39%,         /* Left Tooth: Bottom corner -> Top corner */
+        35% 39%, 36% 31%,       /* Far-Left Upper Inner Valley Rises */
+
+        /* --- 8. TOP-LEFT TOOTH --- */
+        33.5% 21%, 39% 8%,         /* Top-Left Tooth: Bottom corner -> Top corner */
+        43% 15%, 45% 12%        /* Upper-Left Inner Valley Rises (loops back to start) */
+    );
+    cursor: pointer;
+    transition: width 1.2s ease, transform 1.2s ease;
+    will-change: transform;
+    z-index: 4 !important;
+}
+
+.gear.active {
+    transform: translateY(13vh) rotate(360deg);
+    width: 100vw;
+    cursor: auto;
+}
+
+
+
+
+
+
+
+
+
+.overlay {
+    background-color: #1b2432;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.overlay.show {
+    pointer-events: all;
+    transition: opacity 1.2s ease;
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.name {
+    font-family: Lombardic;
+    color: white;
+    font-size: 7vw;
+    margin-top: 1vw;
+    margin-bottom: 0vw;
+    z-index: 2;
+}
+
+.description {
+    font-family: Glacial;
+    color: white;
+    font-size: 2.5vw;
+    margin-top: 0vw;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+.mainLayout {
+    position: relative;
+    width: 100%;
+    height: 88vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.image-wrapper {
+    width: 25vw;
+    height: fit-content;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: fit-content;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+
+.title {
+    font-family: Lombardic;
+    color: white;
+    font-size: 6vw;
+    margin-bottom: 1vh;
+    margin-top: 0vh;
+}
+
+.paragraph {
+    color: white;
+    font-family: Glacial;
+    font-size: 2.3vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.footer {
+    height: 12vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.footerTitle {
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: right;
+    margin-left: auto;
+    padding-right: 1vw;
+    font-family: Lombardic;
+    font-size: 2vw;
+}
