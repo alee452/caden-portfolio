@@ -91,15 +91,16 @@ body {
     object-fit: contain; 
     transition: width 1.2s ease, transform 1.2s ease, opacity 1.2s ease;
     will-change: transform;
-    z-index: 4 !important;
     z-index: 6;
     pointer-events: none;
+     transform: translate(0%, 0%) rotate(0deg);
 }
 
 .lines.active {
-    transform: translateY(13vh) rotate(360deg);
+    position: fixed;
     width: 100vw;
-    pointer-events: none;
+    transform: translateY(10%) rotate(360deg);
+    transform-origin: center center;
 }
 
 
@@ -124,7 +125,7 @@ body {
 .overlay.show {
     pointer-events: all;
     transition: opacity 1.2s ease;
-    opacity: 0.75;
+    opacity: 0.85;
     /*cursor: pointer;*/
 }
 
