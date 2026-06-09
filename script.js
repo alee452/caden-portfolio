@@ -1,14 +1,28 @@
-const gear = document.querySelector(".gear");
 const overlay = document.querySelector(".overlay");
+const lines = document.querySelector(".lines");
+const gear = document.querySelector("#gear");
+const lines2 = document.querySelector("#lines");
+
+
+
 
 gear.addEventListener("click", () => {
-    gear.classList.add("active");
     overlay.classList.add("show");
+    lines.classList.add("active");
+    setTimeout(() => {
+        lines2.classList.toggle("fadein");
+    }, 1200);
+    document.body.classList.add('no-scroll');
 });
 
 overlay.addEventListener("click", () => {
-    gear.classList.remove("active");
-    overlay.classList.remove("show");
+    lines2.classList.remove("fadein");
+
+    setTimeout(() => {
+        overlay.classList.remove("show");
+        lines.classList.remove("active");
+    }, 1000);
+    document.body.classList.remove('no-scroll');
 });
 
 
