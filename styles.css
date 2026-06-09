@@ -53,7 +53,6 @@ body {
 
 
 
-
 .gear-wrapper {
     position: relative;
     height: 17.9vw;
@@ -62,19 +61,26 @@ body {
     align-items: center;
 }
 
-#lines {
+#Education, #Home, #Engineering, #Experience {
     opacity: 0;
     pointer-events: none;
     transition: opacity 1.2s;
+    z-index: 6;
 }
 
-#lines.fadein {
+#Education.fadein, #Home.fadein, #Engineering.fadein, #Experience.fadein {
     opacity: 1;
+    pointer-events: all;
+    cursor: pointer !important;
 }
 
 #gear {
     pointer-events: all;
     cursor: pointer;
+}
+
+#gear.cursor {
+    cursor: default;
 }
 
 
@@ -86,13 +92,14 @@ body {
     transition: width 1.2s ease, transform 1.2s ease, opacity 1.2s ease;
     will-change: transform;
     z-index: 4 !important;
+    z-index: 6;
     pointer-events: none;
 }
 
 .lines.active {
     transform: translateY(13vh) rotate(360deg);
     width: 100vw;
-    cursor: auto;
+    pointer-events: none;
 }
 
 
@@ -118,7 +125,7 @@ body {
     pointer-events: all;
     transition: opacity 1.2s ease;
     opacity: 0.75;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .name {
