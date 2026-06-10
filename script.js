@@ -43,3 +43,7 @@ education.addEventListener("click", () => {
 experience.addEventListener("click", () => {
     window.location.href = "experience.html";
 });
+
+engineering.addEventListener("click", () => {
+    window.location.href = "engineering.html";
+});

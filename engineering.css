@@ -70,6 +70,7 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    row-gap: 2vw;
 }
 
 .bigger-wrapper {
