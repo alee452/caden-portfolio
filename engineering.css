@@ -22,6 +22,7 @@ body, html {
     background-color: #0D1A2F;
     font-family: Glacial;
     font-size: 1.3vw;
+    overflow-x: hidden; /*figure out what's causing this later*/
 }
 
 .heroBanner {
