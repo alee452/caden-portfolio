@@ -16,6 +16,15 @@
     height: 100vh;
 }
 
+html, body {
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    overflow-y: scroll; 
+}
 
 body {
     padding: 0;
