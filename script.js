@@ -39,3 +39,7 @@ overlay.addEventListener("click", () => {
 education.addEventListener("click", () => {
     window.location.href = "education.html";
 });
+
+experience.addEventListener("click", () => {
+    window.location.href = "experience.html";
+});

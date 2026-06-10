@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Lombardic";
+    src: url("fonts/Lombardic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Glacial";
+    src: url("fonts/GlacialIndifference.otf") format("opentype");
+}
+
+.background {
+    width: 100vw !important;
+    max-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+body, html {
+    color: white;
+    background-color: #0D1A2F;
+    font-family: Glacial;
+    font-size: 1.3vw;
+}
+
+.heroBanner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    position: absolute;
+    font-family: Lombardic;
+    z-index: 2;
+    font-size: 10vw;
+}
+
+
+.heading {
+    font-family: Lombardic;
+    font-size: 4vw;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+}
+
+.image {
+    width: 15vw;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 7.5vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigger-wrapper {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wrapper {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
