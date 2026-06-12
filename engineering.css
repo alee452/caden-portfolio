@@ -9,7 +9,7 @@
 }
 
 .background {
-    width: 100vw !important;
+    width: 100% !important;
     max-height: 100vh;
     position: absolute;
     top: 0;
@@ -22,11 +22,25 @@ body, html {
     background-color: #0D1A2F;
     font-family: Glacial;
     font-size: 1.3vw;
-    overflow-x: hidden; /*figure out what's causing this later*/
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    overflow-y: scroll; 
+}
+
+html.no-scroll, body.no-scroll {
+    overflow: hidden !important;
 }
 
 .heroBanner {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -41,53 +55,117 @@ body, html {
 }
 
 
-.heading {
-    font-family: Lombardic;
-    font-size: 4vw;
-    margin-top: 2vw;
-    margin-bottom: 1vw;
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.image {
-    width: 15vw;
-    border-radius: 9px;
+.clickPuzzle {
     cursor: pointer;
 }
 
-.group {
-    display: flex;
-    flex-direction: column;
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2;
     justify-content: center;
     align-items: center;
-    width: fit-content;
-    height: fit-content;
+    display: none;
 }
 
-.grid {
+.show {
+    display: flex !important;
+}
+
+.popup-cube {
+    padding: 2vh;
+    position: relative;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    width: 90vw;
+    height: 80vh;
+    z-index: 3;
+    display: grid;
+    overflow-y: scroll;
+
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    overflow-y: scroll; 
+}
+
+.arrowWrapper {
+    width: 1vw !important;
+    object-fit: contain;
+    z-index: 5;
+}
+
+#nextArrow, #previousArrow {
+    cursor: pointer;
+    z-index: 5;
+}
+
+.cubeImages {
+    height: 60vh;
+}
+
+.cubeContainer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     width: 100%;
-    gap: 7.5vw;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 2vw;
+    gap: 3vw;
+    position: relative;
+    padding: 2vh 2vh 0 2vh;
+    overflow: hidden;
 }
 
-.bigger-wrapper {
-    width: 100vw;
+.carousel {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    transition: transform 0.4s ease-in-out;
 }
 
-.wrapper {
-    width: 60vw;
+.carousel img {
+    flex: 0 0 100%;
+    height: 55vh;
+    object-fit: contain;
+}
+
+.carouselWindow {
+    width: 37vw;
+    overflow: hidden;
+
+    display: block;
+}
+
+.centeringWrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+}
+
+.heading {
+    font-size: 3vw;
+}
+
+.x {
+    width: 2vw;
+    height: 2vw;
+    padding: 1vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }
