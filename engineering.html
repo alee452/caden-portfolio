@@ -20,6 +20,9 @@
             <g id="Frame 1">
                 <g id="Untitled - June 10, 2026 14.25.22 conflict (2) 1">
                     <g id="images">
+                        <g id="vector 1">
+                            <path id="Vector 1" d="M517 388.5L528.5 387.5L591 605L582 613.5L517 388.5Z" fill="white" />
+                        </g>
                         <g id="Clip path group">
                             <mask id="mask0_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="48" y="261"
                                 width="213" height="238">
@@ -850,13 +853,13 @@
                         <path id="cube_2" d="M158 259.5L50 320L46 443L158 502.5L263.5 443V324.5L158 259.5Z"
                             fill="transparent" />
                     </g>
-                    <g id="reverse (machine)" class="clickPuzzle">
-                        <path id="reverse(machine)" fill-rule="evenodd" clip-rule="evenodd"
+                    <g id="reverseMachine" class="clickPuzzle">
+                        <path id="reverseMachine2" fill-rule="evenodd" clip-rule="evenodd"
                             d="M220 662C229.667 668.167 246.1 688.4 234.5 720C222.9 751.6 199.333 750.5 189 746C184.667 755.667 167 771.7 131 758.5C94.9999 745.3 90.6666 725.333 92.9999 717C85.4999 710 70.5 692.6 70.5 679C70.5 662 106.5 595 125.5 589.5C125 572.667 127.7 535.8 142.5 523C142.667 516.167 147.6 503.5 166 507.5C189 512.5 261.5 541.5 289 598.5C289.833 602.5 288.5 610.8 276.5 612C267.5 625 243.6 653.2 220 662ZM204 720.5L211 704L212 703L212.5 715L206.5 722.5L204 720.5Z"
                             fill="transparent" />
                     </g>
-                    <g id="reverse (pen)" class="clickPuzzle">
-                        <path id="reverse (pen)_2"
+                    <g id="reversePen" class="clickPuzzle">
+                        <path id="reversePen2"
                             d="M213.5 845L202 855L209.5 857.5L451 850C453.833 849.5 459.4 847.3 459 842.5C458.6 837.7 453.5 837.167 451 837.5L213.5 845Z"
                             fill="transparent" />
                     </g>
@@ -884,7 +887,7 @@
                             d="M680.5 784.5L612 833.5L597.5 816.5L633.5 790L622.5 778L630 749L636.5 746L625 730L654 724L648 673.5L657.5 666L667.5 677L671 719.5L686.5 717.5L678.5 714L717 642.5L722.5 640L729 645V640L739 632.5L744.5 609L729.5 615L720 606.5L722 591L718 549C720 541.167 727.8 528.6 743 541L781 529L765 526V514.5L769.5 512.5L774 513.5V511.5L777 510L863 531.5V541.5L852 549L828 541.5V556L829.5 557L835 555H842L839 585L824 590L833.5 594.5L830 620.5L831 621L831.5 618L838 611.5L840.5 613.5L845 629.5L844.5 633L852.5 637.5L853 641.5L849.5 642.5L841 637.5L837.5 640L834.5 636L833.5 631.5L828.5 626.5L824 630.5L823.5 636.5L847 649.5L824.5 717.5L710 813.5L680.5 784.5ZM701 714L710.5 698.5L714 702.5L711 712L701 714ZM749 566.5L747.5 569V573.5L748 577.5H749L749.5 573V572L754 571.5V568L749 566.5ZM731 578.5L729.5 568H734L737 567L738 575.5L734 576L731 578.5Z"
                             fill="transparent" />
                     </g>
-                    <g id="fling">
+                    <g id="fling" class="clickPuzzle">
                         <path id="fling_2" fill-rule="evenodd" clip-rule="evenodd"
                             d="M574.5 661L623.5 711C625.833 714.5 628.8 723.2 622 730C615.2 736.8 606.5 732.167 603 729L521.5 642.5C518.833 644.833 512.1 647.8 506.5 641C500.9 634.2 504.167 627.833 506.5 625.5L566 579L510.5 389.5C509.833 387.667 510 383.9 516 383.5V379C508 377.167 492 369.2 492 352C492 330.5 496 320 516 319C536 318 544.5 336.5 542 350.5C539.5 364.5 533 370.5 522.5 368C524.5 369.333 528.2 373.6 527 380V383.5H532C532.833 383.5 534.6 384.7 535 389.5L584 565L594.5 557C597.833 555 605.7 552.9 610.5 560.5V570L623.5 581.5C627.667 578.333 637.4 573.2 643 578C646.667 580.167 651.8 587 643 597L690.5 635C693.167 638 696.9 645.7 690.5 652.5C684.1 659.3 676.833 654.667 674 651.5L628 612.5L574.5 661ZM542.5 625.5L564 608.5L581.5 625.5L559.5 644L542.5 625.5ZM589 587L593 584L595.5 583L610.5 597L597.5 608.5L594.5 605.5L593 600L589 587Z"
                             fill="transparent" />
@@ -1048,18 +1051,18 @@
 
     </div>
 
-    <div class="overlay">
-        <div class="popup-cube">
-            <svg class="x" width="404" height="404" viewBox="0 0 404 404" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+    <div class="overlay" id="masterPopup">
+        <div class="popup">
+            <svg class="x" onclick="closePopup()" width="404" height="404" viewBox="0 0 404 404" fill="none"
+                xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
                 <path d="M10 10L393.5 393.5M393.5 10L10 393.5" stroke="white" stroke-width="20"
                     stroke-linecap="round" />
             </svg>
 
             <div class="centeringWrapper">
-                <p class="heading">Puzzle Cube</p>
-                <!--image carousel here-->
-                <div class="cubeContainer">
+                <p class="heading" id="heading"></p>
+
+                <div class="container">
                     <svg id="previousArrow" class="arrowWrapper" width="84" height="148" viewBox="0 0 84 148"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -1068,14 +1071,7 @@
                     </svg>
 
                     <div class="carouselWindow">
-                        <div class="carousel">
-                            <img src="engineeringImages/cube1.png" class="cubeImages">
-                            <img src="engineeringImages/cube2.png" class="cubeImages">
-                            <img src="engineeringImages/cube3.png" class="cubeImages">
-                            <img src="engineeringImages/cube4.png" class="cubeImages">
-                            <img src="engineeringImages/cube5.png" class="cubeImages">
-                            <img src="engineeringImages/cube6.png" class="cubeImages">
-                        </div>
+                        <div class="carousel" id="imageCarousel"></div>
                     </div>
 
                     <svg id="nextArrow" class="arrowWrapper" width="84" height="148" viewBox="0 0 84 148" fill="none"
@@ -1086,21 +1082,13 @@
                     </svg>
                 </div>
 
-                <p class="description"> We created a puzzle cube for children using hardwood cubes. To do this, we first
-                    modeled each of our pieces via connecting cubes. Next, we created multiview drawings by hand. Then,
-                    we
-                    modeled and assembled the cube on fusion. Finally, we created an exploded view and drawings, then
-                    dimensioned each piece individually. </p>
-                <ul>
-                    <li>Apply knowledge from multiview drawings</li>
-                    <li>Apply knowledge from dimensioning rules </li>
-                    <li>Basic modeling and exploded view using CAD</li>
-                </ul>
+                <p class="description" id="description"></p>
+
+                <p class="description">What I learned</p>
+                <p class="description" id="whatIlearned"></p>
+
                 <p class="description">Reflection</p>
-                <p class="description">If I got the opportunity to do this project again, I would try making a new
-                    puzzle
-                    cube that is more challenging to solve. I didn't feel like I needed to improve anything for this
-                    project. This project was simple, but also enjoyable and important.</p>
+                <p class="description" id="reflection"></p>
             </div>
         </div>
     </div>

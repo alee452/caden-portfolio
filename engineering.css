@@ -10,7 +10,8 @@
 
 .background {
     width: 100% !important;
-    max-height: 100vh;
+    height: 100vh;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -84,13 +85,13 @@ html.no-scroll, body.no-scroll {
     display: flex !important;
 }
 
-.popup-cube {
+.popup {
     padding: 2vh;
     position: relative;
     background-color: #2b2b2b;
     border-radius: 10px;
     width: 90vw;
-    height: 80vh;
+    max-height: 80vh;
     z-index: 3;
     display: grid;
     overflow-y: scroll;
@@ -115,20 +116,23 @@ html.no-scroll, body.no-scroll {
     z-index: 5;
 }
 
-.cubeImages {
-    height: 60vh;
+.images {
+    max-width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
 }
 
-.cubeContainer {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 100%;
-    gap: 3vw;
+    width: 30vw;
+    gap: 1vw;
     position: relative;
     padding: 2vh 2vh 0 2vh;
     overflow: hidden;
+    height: fit-content;
 }
 
 .carousel {
@@ -138,7 +142,7 @@ html.no-scroll, body.no-scroll {
 
 .carousel img {
     flex: 0 0 100%;
-    height: 55vh;
+    width: 30vw;
     object-fit: contain;
 }
 
@@ -158,14 +162,15 @@ html.no-scroll, body.no-scroll {
 
 .heading {
     font-size: 3vw;
+    margin: 2vh;
 }
 
 .x {
-    width: 2vw;
-    height: 2vw;
+    width: 1.4vw;
+    height: 1.4vw;
     padding: 1vw;
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    top: 8vh;
+    right: 4.5vw;
     cursor: pointer;
 }
