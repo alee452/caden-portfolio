@@ -1,7 +1,7 @@
 const prevButton = document.querySelector('#previousArrow');
 const nxtButton = document.querySelector('#nextArrow');
 const carousel = document.querySelector('.carousel');
-const overlay = document.querySelector('.overlay');
+const overlay2 = document.querySelector('.overlay2');
 const xButton = document.querySelector('.x');
 
 //project information
@@ -124,13 +124,13 @@ function openPopup(projectID, event) { //open popup function
         carousel.appendChild(img); //takes the image and adds it to the carousel
     });
 
-    overlay.classList.add('show');
+    overlay2.classList.add('show');
     document.documentElement.classList.add('no-scroll');
     document.body.classList.add('no-scroll');
 }
 
 function closePopup() {
-    overlay.classList.remove('show');
+    overlay2.classList.remove('show');
     document.documentElement.classList.remove('no-scroll');
     document.body.classList.remove('no-scroll');
 }
@@ -191,11 +191,81 @@ if (compoundmachine) {
 
 
 
-overlay.addEventListener('click', (event) => { //listens for click on overlay. have to do this since it's a container for the popup
-    if (event.target === overlay) { //if they did, then close the popup
+overlay2.addEventListener('click', (event) => { //listens for click on overlay. have to do this since it's a container for the popup
+    if (event.target === overlay2) { //if they did, then close the popup
         closePopup();
     }
 });
 
 
 xButton.addEventListener('click', closePopup); //if the user clicks on the x, then close the popup
+
+
+
+
+//gear code
+const overlay = document.querySelector(".overlay");
+const lines = document.querySelector(".lines");
+const gear = document.querySelector("#gear");
+const circle = document.querySelector("#circle");
+const education = document.querySelector("#Education");
+const home = document.querySelector("#Home");
+const engineering = document.querySelector("#Engineering");
+const experience = document.querySelector("#Experience");
+
+circle.addEventListener("click", () => {
+    overlay.classList.add("show");
+    lines.classList.add("active");
+    gear.classList.add("cursor");
+    circle.classList.add("noshow");
+    setTimeout(() => {
+        education.classList.add("fadein");
+        home.classList.add("fadein");
+        engineering.classList.add("fadein");
+        experience.classList.add("fadein");
+    }, 1200);
+    document.body.classList.add('no-scroll');
+});
+
+
+gear.addEventListener("click", () => {
+    overlay.classList.add("show");
+    lines.classList.add("active");
+    gear.classList.add("cursor");
+    circle.classList.add("noshow");
+    setTimeout(() => {
+        education.classList.add("fadein");
+        home.classList.add("fadein");
+        engineering.classList.add("fadein");
+        experience.classList.add("fadein");
+    }, 1200);
+    document.body.classList.add('no-scroll');
+});
+
+overlay.addEventListener("click", () => {
+    education.classList.remove("fadein");
+    home.classList.remove("fadein");
+    engineering.classList.remove("fadein");
+    experience.classList.remove("fadein");
+    circle.classList.remove("noshow");
+
+    setTimeout(() => {
+        overlay.classList.remove("show");
+        lines.classList.remove("active");
+        gear.classList.remove("cursor");
+    }, 1000);
+    document.body.classList.remove('no-scroll');
+});
+
+
+education.addEventListener("click", () => {
+    window.location.href = "education.html";
+});
+
+experience.addEventListener("click", () => {
+    window.location.href = "experience.html";
+});
+
+home.addEventListener("click", () => {
+    window.location.href = "index.html";
+});

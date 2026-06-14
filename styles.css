@@ -42,7 +42,6 @@ body {
     height: 100vh;
     object-fit: cover;
     background-repeat: no-repeat;
-    width: 100%;
 }
 
 .titleLayout {
@@ -77,7 +76,19 @@ body {
     z-index: 6;
 }
 
-#Education.fadein, #Home.fadein, #Engineering.fadein, #Experience.fadein {
+#Home.fadein {
+    opacity: 0.6;
+    pointer-events: all;
+    cursor: auto !important;
+}
+
+/*home color*/
+#Vector, #Vector_2, #Vector_3, #Vector_4, #Ellipse1, #Line1, #Line2 {
+    fill: #90D5FF;
+    stroke: #90D5FF;
+}
+
+#Education.fadein, #Engineering.fadein, #Experience.fadein {
     opacity: 1;
     pointer-events: all;
     cursor: pointer !important;
@@ -165,20 +176,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-}
-
-.image-wrapper {
-    width: 25vw;
-    height: fit-content;
-    border-radius: 20px;
-    overflow: hidden;
 }
 
 .image {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+    border-radius: 20px;
+    height: auto;
+    width: 25vw;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .column {
@@ -190,6 +195,7 @@ body {
 
 .wrapper {
     width: 100%;
+    max-height: 100vh;
     display: flex;
     flex-direction: row;
     height: fit-content;
@@ -232,4 +238,41 @@ body {
     padding-right: 1vw;
     font-family: Lombardic;
     font-size: 2vw;
+}
+
+/*mobile layout*/
+@media (max-width: 1000px) {
+    .wrapper {
+        flex-direction: column;
+        padding: 10vw;
+        position: relative;
+    }
+
+    .mainLayout {
+        min-height: fit-content;
+    }
+
+    .image {
+        width: 60vw;
+        height: fit-content;
+        border-radius: 10px;
+    }
+
+    .column {
+        width: 60vw;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 10vw;
+    }
+
+    .paragraph {
+        font-size: 3.5vw;
+    }
+
+    .footer {
+        height: 10vw;
+        position: relative;
+    }
 }

@@ -89,3 +89,104 @@ body, html {
     align-items: center;
     text-align: center;
 }
+
+
+
+
+
+
+/*experience color*/
+#Vector_16, #Vector_17, #Vector_18, #Vector_19, #Vector_20, #Vector_21, #Vector_22, #Vector_23, #Vector_24, #Vector_25, #Ellipse1_3, #Line1_3, #Line2_3 {
+    fill: #90D5FF;
+    stroke: #90D5FF;
+}
+
+
+
+
+#Education, #Home, #Engineering, #Experience {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s;
+    z-index: 6;
+}
+
+#Experience.fadein {
+    opacity: 0.6;
+    pointer-events: all;
+    cursor: auto !important;
+}
+
+#Education.fadein, #Home.fadein, #Engineering.fadein {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer !important;
+}
+
+#gear {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+#gear.cursor {
+    cursor: default;
+}
+
+
+.lines {
+    position: fixed;
+    top: 2vh;
+    right: 0vw;
+    width: 7vw;
+    height: 7vh;
+    transform-origin: center center;
+    opacity: 1;
+    object-fit: contain; 
+    transition: transform 1.2s ease, width 1.2s ease, height 1.2s ease, opacity 1.2s ease;
+    will-change: transform;
+    z-index: 6;
+    pointer-events: none;
+    transform: rotate(0deg);
+}
+
+#circle {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+#circle.noshow {
+    pointer-events: none;
+    cursor: auto;
+}
+
+.lines.active {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(720deg);
+    transform-origin: center center;
+}
+
+#lines_1 {
+    cursor: pointer;
+}
+
+.overlay {
+    background-color: #1b2432;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.overlay.show {
+    pointer-events: all;
+    transition: opacity 1.2s ease;
+    opacity: 0.85;
+    /*cursor: pointer;*/
+}
